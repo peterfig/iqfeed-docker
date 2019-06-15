@@ -53,8 +53,18 @@ ADD app /root/app
 
 ENV WINEPREFIX /root/.wine
 CMD ["/usr/bin/supervisord"]
-# Expose Ports
-EXPOSE 5010
-EXPOSE 9101
-EXPOSE 9301
+
+## IQFeed Ports
+# 5009: Level 1 quotes
+EXPOSE 5009
+# 9100: Lookup 
+EXPOSE 9100
+# 9400: Derivative data
+EXPOSE 9400
+# 9200: Level 2 quotes
+EXPOSE 9200
+# 9300: Admin
+EXPOSE 9300
+
+# VNC
 EXPOSE 5900
